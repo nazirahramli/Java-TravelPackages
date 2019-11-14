@@ -1,0 +1,95 @@
+package travelpackages;
+import java.util.Scanner;
+
+public class TravelPackages {
+
+    
+    public static void main(String[] args) {
+        
+        String packagesTitle[], travelDuration[], description[];
+        int price[];
+        
+        packagesTitle = new String[5];
+        travelDuration = new String[5];
+        description = new String[5];
+        price = new int[5];
+        
+        Scanner scan = new Scanner (System.in);
+        
+         System.out.println ("**********TRAVEL PACKAGES TO HATYAI**********");
+       
+         try{
+       for (int i=0; i<5; i++){
+         
+           System.out.print("Packages Title: ");
+           packagesTitle[i] = scan.nextLine();
+           System.out.print("Travel Duration: ");
+           travelDuration[i] = scan.nextLine();
+           System.out.print("Description: ");
+           description[i] = scan.nextLine();
+           System.out.print("Price (RM): ");
+           price[i] = scan.nextInt();
+           scan.nextLine();
+       }
+         }
+           catch (Exception e){
+        System.out.println ("You enter the wrong number");
+       }
+    
+           
+       System.out.println("**********TRIP TO HATYAI PACKAGES**********");
+       printpackages(packagesTitle[0], travelDuration[0], description[0], price[0]);
+       printpackages(packagesTitle[1], travelDuration[1], description[1], price[1]);
+       printpackages(packagesTitle[2], travelDuration[2], description[2], price[2]);
+       printpackages(packagesTitle[3], travelDuration[3], description[3], price[3]);
+       printpackages(packagesTitle[4], travelDuration[4], description[4], price[4]);
+    }
+           
+    static void printpackages (String pt, String td, String d, int p){
+       System.out.println ("Packages Title: "+pt);
+       System.out.println ("Travel Duration: "+td);
+       System.out.println ("Description: "+d);
+       System.out.println ("Price (RM): "+p);
+    
+}
+    
+}
+package travelpackages;
+
+public class Packages {
+    String packagesTitle, travelDuration, description;
+    int price;
+    
+    public Packages (String packageTitle, String travelDuration, String description, int price){
+        this.packagesTitle = packagesTitle;
+        this.travelDuration = travelDuration;
+        this.description = description;
+        this.price = price;
+        
+    }
+        String getPackagesTitle (){
+            return this.packagesTitle;
+}
+        String getTravelDuration(){
+            return this.travelDuration;
+        }
+        String getDescription (){
+            return this.description;
+        }
+        int getPrice(){
+            return this.price;
+        }
+        void setPackagesTitle(){
+            this.packagesTitle = packagesTitle;
+        
+        }
+        void setTravelDuration(){
+            this.travelDuration = travelDuration;
+        }
+        void setDescription(){
+            this.description = description;
+        }
+        void setPrice(){
+            this.price = price;
+        }
+    }
